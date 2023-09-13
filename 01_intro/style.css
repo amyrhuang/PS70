@@ -97,6 +97,10 @@ a:hover {
   background-color: #C1D5F0; 
 }
 
+.overflow {
+  overflow: hidden;
+}
+
 
 
 
