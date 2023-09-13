@@ -18,6 +18,10 @@ h1 {
   font-family: "Times New Roman", Times, serif;
 }
 
+hd1 {
+        margin-bottom: 20px; /* Adjust the margin as needed */
+    }
+
 h2 {
   font-family: "Times New Roman", Times, serif;
 }
