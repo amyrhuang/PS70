@@ -22,6 +22,14 @@ h2 {
   font-family: "Times New Roman", Times, serif;
 }
 
+a {
+  color: black; 
+}
+
+a:hover {
+  color: #5D34A5; 
+}
+
 .nav-title{
   margin-left: 15px;
   margin-right: 15px;
@@ -49,9 +57,40 @@ h2 {
   margin: 0 auto; 
 }
 
+.gray-circle {
+  background-color: #BEBEBE; /* Adjust the color as needed */
+  width: 200px; /* Adjust the width as needed */
+  height: 200px; /* Same as the width to create a circle */
+  border-radius: 50%; /* Makes the element circular */
+  margin: 0 auto; /* Center-align the circle horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+}
+
+.wk1-circle {
+  background-color: #FFCBCB; 
+  width: 200px; 
+  height: 200px; 
+  border-radius: 50%; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .row p {
   text-align: center;
 }
+
+.row {
+  margin-bottom: 20px;
+}
+
 
 .navbar {
   height: 80px; 
