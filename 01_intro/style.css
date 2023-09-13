@@ -71,7 +71,7 @@ a:hover {
 }
 
 .wk1-circle {
-  background-color: #FFCBCB; 
+  background-color: #FFE5EC; 
   width: 200px; 
   height: 200px; 
   border-radius: 50%; 
@@ -100,6 +100,17 @@ a:hover {
 .overflow {
   overflow: hidden;
 }
+
+.image-text-container {
+    display: flex; 
+    align-items: center; 
+        }
+
+.image {
+    max-width: 50%; /* Adjust the width as needed */
+    height: auto; /* Maintain the image's aspect ratio */
+    margin-right: 20px; /* Add space between the image and text */
+        }
 
 
 
