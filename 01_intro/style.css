@@ -87,6 +87,19 @@ a:hover {
   text-align: center;
 }
 
+.wk2-circle {
+  background-color: #CAF1FF; 
+  width: 200px; 
+  height: 200px; 
+  border-radius: 50%; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .row p {
   text-align: center;
 }
