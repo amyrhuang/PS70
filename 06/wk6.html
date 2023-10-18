@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<title>Week 3 </title>
+<title>PS70: Intro to Digital Fabrication </title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../01_intro/style.css" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
 
-<nav class="navbar navbar-expand-sm navbar-light bg-custom">
-  <div style="align-items: left; justify-content:left;" class="container-fluid">
+<nav class="navbar navbar-expand-sm navbar-light bg-custom" id="sticky-navbar"> 
+  <div style="align-items: left; justify-content:left;" class="container-fluid" >
     <h3 class="nav-title"> PS70: Intro to Digital Fabrication</h3>
     <div class="navbar-nav">
       <h4><a class="nav-link" href="../index.html">Home</a></h4>
@@ -17,13 +17,96 @@
 
 <body>
 
-    <div>
-        <h1 style= "text-align: center;"> 
-          <img src = "../02_2D/construction.jpg" width="300">
-        <p>...page under construction...</p></h1>
+
+<xmp style="display:none;">
+
+<h1 style= "text-align: center;">  
+Week 6: Electronic Input Devices </b></h1>
+
+This week's assignment is to (1) make a capacitive sensor (2) configure and use another sensor (3) include schematics of each sensor (4) calibrate each sensor and (5) prepare CAD files for CNC week. 
+
+<h2 style= "text-align: center;">  
+Part 1: Making a Capacitive Sensor  </b></h2>
+
+For my capacitive sensor, I was inspired by Kassia's lab. I really liked the idea of making a "scale" with the copper sheets and a foam pad. 
+
+Here's a list of the materials I used:
+<ul>
+    <li>Copper sheets</li>
+    <li>Foam pad</li>
+    <li>Alligator clips and wires</li>
+    <li>Arduino board</li>
+</ul>
+
+My set-up ended up looking something like this (here's a picture of my setup and the schematics): 
+
+<div class="image-container" style="margin-bottom: 20px; ; text-align: center;">
+        <img src="copper1.jpeg" alt="Image 1" width="300" height="400">
+        <img src="copper.jpg" alt="Image 1" width="450" height="300">
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+In order to calibrate my sensor, I used a cup of water that had markings at every fluid oz. I started with putting an empty cup on my sensor, then I went up 2 ounces per weight in until I reached 8 ounces. 
+
+Here's the code that I used in Arduino (this was taken from code given on the PS70 website): 
+
+<pre>
+    <code class="arduino">
+        long result;  
+int analog_pin = A0;
+int tx_pin = 9;
+
+void setup() {
+    pinMode(tx_pin, OUTPUT);    
+    Serial.begin(9600);
+}
+
+void loop() {
+    result = tx_rx();
+    Serial.println(result);
+}
+
+
+long tx_rx(){       
+                     
+  int read_high;
+  int read_low;
+  int diff;
+  long int sum;
+  int N_samples = 100;   
+
+  sum = 0;
+
+  for (int i = 0; i < N_samples; i++){
+   digitalWrite(tx_pin,HIGH);              
+   read_high = analogRead(analog_pin);     
+   delayMicroseconds(100);                 
+   digitalWrite(tx_pin,LOW);              
+   read_low = analogRead(analog_pin);     
+   diff = read_high - read_low;            
+   sum += diff;                            
+ }
+  return sum;
+}   
+    </code>
+</pre>
+
+Here's a graph of my values from the serial plotter, plotted in Desmos with a line of best fit that's hand drawn in. 
+
+<div class="image-container" style="margin-bottom: 20px; ; text-align: center;">
+        <img src="copper2.jpg" alt="Image 1" width="450" height="300">
+    </div>
+
+As you can see, the data points taper off significantly and it's not a linear relationship. The line of best fit becomes practically flat when there's 8 ounces of water on it. There wasn't a huge jump from 6 ounces to 8 ounces. 
+
+<h2 style= "text-align: center;">  
+Part 2: Light-Controlled LED using a Photoresistor </b></h2>
+
+For the second part of this week's assignment, I decided to use a photoresistor and create a circuit where an LED's brightness adjusts according to the amount of ambient light. The goal is as the ambient light decreases, the LED's brightness increases, and vice versa. 
+
+</xmp>
 </body>
+
+<script src="../strapdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+
 </html>
