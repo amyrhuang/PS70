@@ -169,6 +169,16 @@ a:hover {
     margin-right: 20px; /* Add space between the image and text */
         }
 
+li {
+  font-family: inherit; /* Inherit the font from the parent (body) */
+  font-size: inherit;   /* Inherit the font size from the parent (body) */
+  line-height: inherit; /* Inherit the line height from the parent (body) */
+        }
+
+ul {
+    list-style-type: disc; /* Use bullets for list items */
+    margin-left: 20px;    /* Add some left margin for indentation */
+        }
 
 
 
