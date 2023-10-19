@@ -103,6 +103,62 @@ Part 2: Light-Controlled LED using a Photoresistor </b></h2>
 
 For the second part of this week's assignment, I decided to use a photoresistor and create a circuit where an LED's brightness adjusts according to the amount of ambient light. The goal is as the ambient light decreases, the LED's brightness increases, and vice versa. 
 
+Here's a list of the materials I used:
+<ul>
+    <li>LED light</li>
+    <li>Photoresistor</li>
+    <li>1k and 10k resistor</li>
+    <li>Wires</li>
+    <li>Arduino board</li>
+</ul>
+
+Here is a schematic of my circuits:
+
+<div class="image-container" style="margin-bottom: 20px; ; text-align: center;">
+        <img src="schematic1.jpg" alt="Image 1" width="450" height="300">
+    </div>
+
+Here is the code that I used (after becoming more comfortable coding in Arduino, I coded this myself -- unlike the first part of this week's project!): 
+
+<pre>
+    <code class="arduino">
+const int ldrPin = A0;
+const int ledPin = 9;
+int lastPressed = 0;
+
+void setup() {
+    pinMode(ldrPin, INPUT);
+    pinMode(ledPin, OUTPUT);
+    Serial.begin(9600);  // Initialize serial communication at 9600 baud
+}
+
+void loop() {
+
+    if(lastPressed + 100 <= millis()) {
+      lastPressed = millis();
+      int ldrValue = analogRead(ldrPin);
+      
+      // Print LDR reading to Serial Monitor
+      Serial.println(ldrValue);
+
+      int ledBrightness = map(ldrValue, 0, 1023, 255, 0);
+      analogWrite(ledPin, ledBrightness);
+    }
+  
+}
+</code>
+</pre>
+
+I used the different brightness settings on the iPhone flashlight to calibrate my sensor and it worked surprisingly well. The first point on the graph is me putting a finger on top of the photoresistor. There also seems to be a non-linear relationship between the readings and increasing the input by one setting. It seems to taper off and flatten out as the lights were brighter. Here is a graph of my findings with a hand-drawn line of best fit: 
+
+<div class="image-container" style="margin-bottom: 20px; ; text-align: center;">
+        <img src="photoresistor.jpeg" alt="Image 1" width="450" height="300">
+    </div>
+
+I was really proud of the fact that my circuit actually worked so here's a gif of it in action! 
+
+<img src="light.gif" width="400" height="600">
+
 </xmp>
 </body>
 
