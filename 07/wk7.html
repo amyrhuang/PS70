@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<title>Week 3 </title>
+<title>PS70: Intro to Digital Fabrication </title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../01_intro/style.css" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
 
-<nav class="navbar navbar-expand-sm navbar-light bg-custom">
-  <div style="align-items: left; justify-content:left;" class="container-fluid">
+<nav class="navbar navbar-expand-sm navbar-light bg-custom" id="sticky-navbar"> 
+  <div style="align-items: left; justify-content:left;" class="container-fluid" >
     <h3 class="nav-title"> PS70: Intro to Digital Fabrication</h3>
     <div class="navbar-nav">
       <h4><a class="nav-link" href="../index.html">Home</a></h4>
@@ -17,13 +17,38 @@
 
 <body>
 
-    <div>
-<h1 style= "text-align: center;"> 
-  <img src = "../02_2D/construction.jpg" width="300">
-        <p>...page under construction...</p></h1>
+
+<xmp style="display:none;">
+
+<h1 style= "text-align: center;">  
+Week 7: Electronic Output Devices </b></h1>
+
+This week's assignment is to make a <strong>minimum viable product</strong> that has to (1) include at least one input and one output device (2) include a written microcontroller program that integrates at least one input and one output device and (3) use an oscilloscope to discover the time domain at which my output device is operating.
+
+<h2 style= "text-align: center;">  
+Part 1: Minimum Viable Product (MVP) </b></h2>
+
+For my MVP, I needed to build a circuit that connects a screen to a weather API so that the temperature is displayed. This includes my input and output in one go since it'll be taking in data from the weather API and displaying it on a screen. 
+
+I've graduated to an ESP32 board and I'm using an I2C LCD Display. The hardest part of this week was figuring out how to code in a display and then get information from a weather API. The weather API I used can be found <a href="https://www.weatherapi.com/">here</a>. After a long day of coding (and a lot of help from Bobby), the screen part of my MVP worked! 
+
+After this, I connected a servo motor to my ESP32 so that it would turn a certain amount if the temperature was above x degrees. 
+
+Here's a picture of my display and my servo! 
+
+<div class="image-container" style="margin-bottom: 20px; ; text-align: center;">
+        <img src="screen.jpeg" alt="Image 1" width="300" height="450">
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<h2 style= "text-align: center;">  
+Part 2: Box </b></h2>
+
+Since the coding parts of my MVP are pretty straight-forward, I'll be focusing most of my efforts on making my weather buddy as aesthetically pleasing as possible. I hope to explore many different types of boxes. 
+
+</xmp>
 </body>
+
+<script src="../strapdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+
 </html>
