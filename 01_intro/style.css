@@ -153,6 +153,19 @@ a:hover {
   text-align: center;
 }
 
+.wk7-circle {
+  background-color: #FFB3B2; 
+  width: 200px; 
+  height: 200px; 
+  border-radius: 50%; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 
 .row p {
   text-align: center;
