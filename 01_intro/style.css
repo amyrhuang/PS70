@@ -192,6 +192,18 @@ a:hover {
   text-align: center;
 }
 
+.wk10-circle {
+  background-color: #B1D0FE; 
+  width: 200px; 
+  height: 200px; 
+  border-radius: 50%; 
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 
 .row p {
