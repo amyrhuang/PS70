@@ -128,6 +128,12 @@ a:hover {
             height: 100vh; /* This centers the container vertically */
         }
 
+.video-container iframe {
+            /* You can adjust the width and height as needed */
+            width: 1000px;
+            height: 600px;
+        }
+
 
 code {
   font-family: "Courier New", monospace;
@@ -136,5 +142,6 @@ code {
   padding: 2px 4px;
   order: 1px solid #ccc;
     }
+
 
 /*     Montserrat, sans-serif; */
